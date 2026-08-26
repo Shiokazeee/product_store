@@ -1,4 +1,4 @@
-def show_products(products):
+def show_products(products: list[dict[str, str | int]]) -> None:
     for product in products:
         print(
             f"{product['name']} — "
@@ -13,16 +13,17 @@ def product_search(products: list[dict[str, str | int]], name: str) -> dict[str,
             return product
 
 
-products = [
+def main() -> None:
+    products = [
     {"name": "Ноутбук", "price": 85000, "stock": 4},
     {"name": "Мышь", "price": 2500, "stock": 15},
     {"name": "Монитор", "price": 32000, "stock": 0},
     {"name": "Клавиатура", "price": 7000, "stock": 8},
 ]
 
-def main():
     show_products(products)
     print(product_search(products, 'Мышь'))
   
     
-main()
+if __name__ == "__main__":
+   main()
