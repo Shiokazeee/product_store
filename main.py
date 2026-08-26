@@ -7,7 +7,7 @@ def show_products(products):
         )
 
 
-def product_search(products, name):
+def product_search(products: list[dict[str, str | int]], name: str) -> dict[str, str | int]:
     for product in products:
         if product['name'] == name:
             return product
@@ -20,5 +20,9 @@ products = [
     {"name": "Клавиатура", "price": 7000, "stock": 8},
 ]
 
-show_products(products)
-print(product_search(products, 'Мышь'))
+def main():
+    show_products(products)
+    print(product_search(products, 'Мышь'))
+  
+    
+main()
